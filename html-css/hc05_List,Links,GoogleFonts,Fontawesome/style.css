@@ -1,0 +1,248 @@
+body{
+    /*padding: 0;
+    margin: 0;*/
+}
+
+ul.languages{
+    /*Madde imi stilleri*/
+    /*background-color: gray;*/
+    list-style-type: circle;
+    list-style-type: square;
+    list-style-type: none;
+    list-style-type: lower-latin;
+    list-style-type: georgian;
+    list-style-type: disc;
+
+    /*Madde imi li lerin içindemi dışındamı olmalı belirttik*/
+
+    list-style-position: inside;
+    /*padding: 20px;*/
+
+    list-style-image: url(./img/house-solid.svg);
+
+}
+
+ul.languages li{
+    background-color: lightgreen;
+    margin: 5px;
+    width: 250px;
+    border-radius: 10px;
+    padding-left: 20px;    
+    border: 2px solid goldenrod;
+    border-left: 3px solid gray;
+}
+
+ul.languages li:hover{
+    /*background-color: lightcoral;*/
+}
+
+ul.languages li:hover{
+    /* background-color: lightcoral; */
+    opacity: .5;
+    cursor: pointer;
+}
+
+h2{
+    color: blueviolet;
+}
+
+h2 i{
+    color: crimson;
+}
+
+.fa-image{
+    color: red;
+    font-size: 30px;
+}
+
+  /*!----- PSEUDO CLASSES ------- */
+
+  ul.pseudo li:first-child{
+    color: red;
+  }
+  
+  ul.pseudo li:last-child{
+    color: blue;
+  }
+
+  ul.pseudo li:nth-child(3){
+    font-size: 30px;
+    font-weight: 800;
+    color: orange;
+    background-color: crimson;
+    font-family: 'Audiowide', cursive;
+    font-family: 'Fuggles', cursive;
+    font-family: 'Jolly Lodger', cursive;
+    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Skranji', cursive;
+  }
+  ul.pseudo li:nth-child(5){
+    font-size: 30px;
+    font-family: 'Audiowide', cursive;
+    font-family: 'Fuggles', cursive;
+    font-family: 'Jolly Lodger', cursive;
+    font-family: 'Shadows Into Light', cursive;
+  }
+  ul.pseudo li:nth-child(odd){
+    color: blue;
+    background-color:green;
+  }
+  ul.pseudo li:nth-child(even){
+    /*color: orange;*/
+    background-color: pink;
+  }  
+
+/*ul.pseudo li:active{
+    color: white;
+    background-color: black;
+  }*/
+
+  /* input aktif hale geldiğinde  */
+  input:focus{
+    background-color: tomato;
+    color: white;
+    border: 4px dashed gray;
+    outline: none;
+   }
+   
+  ul.pseudo li:hover {
+    color: orange;
+    background-color: black;
+  }
+
+  /*nav.link a{
+    color: fuchsia;
+    text-decoration: none;
+  }
+  nav.link a{
+    color: fuchsia;
+    text-decoration: none;
+  }
+  nav.link a:hover{
+    color: blue;
+    text-decoration: underline;
+  }*/
+
+  /*nav.link a:link{
+    color: red;
+  }
+  nav.link a:visited{
+    color: magenta;
+  }
+  nav.link a:active{
+    color: lightsalmon;
+  }
+  nav.link a:hover{
+    color: lightsalmon;
+  }*/
+
+  nav.cw a{
+    text-decoration: none;
+    border: 2px solid darkorange;
+    padding: 5px;
+    margin: 10px;
+    color: darkorange;
+    border-radius: 10px;
+  }
+
+  nav.cw a:hover{
+    background-color: grey;
+    color: white;
+  }
+
+  nav.cw a i{
+    margin: 5px;
+    font-size: 1.1rem;
+    color: gray;
+  }
+  nav.cw a:hover i{
+    color: red;
+  }
+
+  /*nav.cw a i:hover{
+    color: darkorange;
+  }*/ /*sadece i değişsin istemiyorsam nav.cw a:hover i{} yaparım*/
+
+  span{
+    background-color: gray;
+    margin: 10px;
+    margin-top: 50px;
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+    /*padding: 20px;*/
+  }
+
+  #par{
+    background-color: brown;
+    display: inline;
+  }
+
+  /*--------PSEUDO ELEMENTS--------*/
+
+  .p-elements::first-line{
+    color: red;
+  }
+  .p-elements::first-letter{
+    font-size: 40px;
+  }
+  ul.before-after{
+    list-style-type: none;
+    
+  }
+  ul.before-after li{
+    margin: 0.5rem;
+    background-color: lightsalmon;
+    width: 40%;
+    border-radius: 10px;
+    /*text-align: center;*/
+    transition: all 1s;
+    
+  }
+  ul.before-after li:hover{
+    background-color: skyblue;
+       
+  }
+  ul.before-after li::before{
+    content: '🚗';
+    margin: 15px;
+  }
+  ul.before-after li:nth-child(2){
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  ul.before-after li:nth-child(2)::before{
+    content: '🚀';
+  }
+  ul.before-after li:nth-child(3)::before{
+    content: '\2728' ;
+  }
+  ul.before-after li:last-child::after{
+    content: '🚖' ;
+    margin: 10px;
+  }
+  ul.before-after li:nth-child(2)::after{
+    content: '🏁' ;
+    margin: 10px;
+  }
+  ul.before-after li:nth-child(3)::after{
+    content: '🏍' ;
+    margin: 10px;
+  }
+  ul.before-after li:first-child::after{
+    content: '🚓' ;
+    margin: 10px;
+  }
+
+  ul.before-after li:nth-child(3):hover::after{
+    content: '🏁';
+  }
+  ul.before-after li:nth-child(4):active::after{
+    content: '✅';
+  }
+
+
+
+
+

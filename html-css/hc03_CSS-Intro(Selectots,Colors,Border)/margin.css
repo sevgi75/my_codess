@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    /*margin: 0;*/
+}
+h1{
+    background-color: red;
+    /*margin: 0;*/
+    margin-top: 100px;
+}
+
+#par1{
+    background-color: green;
+    /*margin: 0;*/
+    /*margin: 10px 50px;*/
+    /*margin: 50px;*/
+    width: 250px; /*margin : auto; verebilmek için width verdik*/
+    height: 200px;
+    margin: 20px auto;
+    border: 2px solid red;
+    padding: 20px; /*padding i artirinca kutumun büyümesini istemiyorsam box-sizing: border-box demeliyim*/
+    /*box-sizing: border-box;*/
+}
+
+#par2{
+    background-color: blueviolet;
+    /*margin: 0;*/
+}
+
+#link{
+    background-color: blue;
+    display: block;
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    color: white;
+    
+}
+
+
+.container{
+    background-color: bisque;
+    border: 1px solid;
+    margin: 50px;
+    padding: 1px;
+}

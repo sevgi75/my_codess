@@ -1,0 +1,19 @@
+:root{
+    --baslikRengi:rgba(200, 40, 35, 0.788);
+    --yaziRengi:rgb(10,150,200);
+    --standatOlcu:1rem;
+    --borderDegeri:0.5rem;
+    
+}
+
+
+h1{
+    color: var(--baslikRengi);
+    font-size: calc(var(--standatOlcu)*3);
+}
+
+button{
+    background-color: var(--baslikRengi);
+    padding: var(--standatOlcu);
+    border: none;
+}

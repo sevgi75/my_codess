@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMLAR</title>
+</head>
+<body>
+    <h1>FORMLAR</h1>
+    <!-- NAME (TEXT) -->
+    <form action="">
+        <section>
+            <label for="first-name">Name</label>
+            <input type="text" id="first-name" name="firstName" value="" required/>
+            
+        </section>
+        <br><br>
+        <!-- EMAIL -->
+        <section>
+            <label for="email">Email</label>
+            <input 
+            type="email"
+            id="email"
+            name="email"
+            placeholder="isim@mail.com"
+            required>
+        </section>
+        <br><br>
+        <!-- PASWORD -->
+        <section>
+            <label for="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              required
+              placeholder="en az 8 karakter giriniz"
+              minlength="8"
+              maxlength="12"
+            />
+          </section>
+        <br><br>
+        <!-- AGE(NUMBER) -->
+        <section>
+            <label for="age">Age</label>
+            <input
+              type="number"
+              name="age"
+              id="age"
+              required
+              min="0"
+              max="100"
+            />
+          </section>
+          <br>
+          <section>
+              <input type="submit" value="Kaydet">
+              <button type="reset">Sil</button>
+  
+          </section>
+        <!-- GENDER(RADIO) -->
+        <section>
+            <label for="">Gender:</label> <br />
+            <label for="female">Female</label>
+            <input type="radio" name="gender" checked id="female" />
+    
+            <label for="male">Male</label>
+            <input type="radio" name="gender" id="male" />
+          </section>
+          <br />
+         <!-- LANGUAGE (CHECKBOX )-->
+      <section>
+        <label for="">Languages:</label> <br />
+        <input
+          type="checkbox"
+          name="languages"
+          value="turkce"
+          id="languages"
+          checked
+        />Türkçe <br />
+        <input
+          type="checkbox"
+          name="languages"
+          value="english"
+          id="languages"
+        />English <br />
+        <input
+          type="checkbox"
+          name="languages"
+          value="français"
+          id="languages"
+        />Français <br />
+        <input
+          type="checkbox"
+          name="languages"
+          value="dutch"
+          id="languages"
+        />Dutch <br />
+      </section>
+      <br />
+
+      <!-- DATE -->
+
+      <section>
+        <label for="dob">Dogum Tarihi</label><br><br>
+        <input type="date" name="dob" id="dob" min="1990-01-01">
+      </section>
+      <br><br>
+
+      <!-- SELECT -->
+      <section>
+        <select name="tatli" id="tali">
+          <optgroup label="şerbetli tatlilar">
+            <option value="künefe">Künefe</option>
+            <option value="havuç dilimi">H. Dilimi</option>
+          </optgroup>
+
+          <optgroup label="sütlü tatlilar">
+            <option value="sütlaç">Sütlaç</option>
+            <option value="kazandibi">Kazandibi</option>
+          </optgroup>
+        </select>
+      </section>
+      <br><br>
+
+      <!-- TEXTAREA -->
+      <section>
+        <label for="yorum">Yorumlarinizi Giriniz:</label>
+        <br><br>
+        <textarea name="yorum" id="yorum" cols="40" rows="10" style="resize: none;" maxlength="100" placeholder="En fazla 100 karakter girilebilir"></textarea>
+      </section>
+      <br>
+       <!-- BUTTONS -->
+      <section>
+        <input type="submit" value="Kaydet" />
+        <button type="reset">Sil</button>
+      </section>  
+
+
+    </form>
+    
+</body>
+</html>

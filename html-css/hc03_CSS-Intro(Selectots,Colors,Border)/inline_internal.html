@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inline-Internal CSS</title>
+
+    <style>
+        img{
+            width: 200px;
+            height: 200px;
+            border: 5px solid blue;
+            border-radius: 50%;
+        }
+        .img-div{
+            border: 3px solid red;
+            text-align: center;
+            background-color: bisque;
+        }
+
+        #par{
+            color: purple;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: justify;
+            font-weight: 900;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!--
+   * Inline CSS, HTML elementlerine style keyword'u ile eklenir.
+   * style kelimesinin ici aslinda CSS alanidir.
+   * Sadece eklenen element icin bir stillendirme gerceklestirir.
+   * Bu sebeple cok pratik bir yontem degildir.
+   * HTML kodlarini kalabaliklastirdigi icin kodun gorunumunu karmasiklastirir.
+ -->
+    <h1 style="color: red; text-align: center;">Using CSS</h1>
+
+    <p style="background-color: chocolate;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis ad laudantium commodi, hic repellendus odio laborum, quae voluptas praesentium aliquam recusandae minima provident! Corporis quos, veniam dolor tenetur possimus dolores.</p>
+
+    <div class="img-div">
+
+    <img src="https://cdn.pixabay.com/photo/2023/08/17/14/44/rabbit-8196781_640.png" alt="">
+
+    <img src="https://cdn.pixabay.com/photo/2023/09/04/06/59/dog-8232158_640.jpg" alt="">
+
+</div>
+
+<div id="par">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi qui corporis nam ea velit tempora amet recusandae fuga, quisquam consectetur cumque quaerat adipisci ex! Nulla, ab. Optio mollitia adipisci inventore.</div>
+    
+</body>
+</html>
