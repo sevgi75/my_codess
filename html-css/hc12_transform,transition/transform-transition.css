@@ -110,7 +110,7 @@ img{
     border: 2px solid gray;
     border-radius: 5px;
     font-size: 1.3rem;
-    transition: all 5s;
+    transition: all .5s;
 }
 .btn:hover{
     background-color: crimson;
