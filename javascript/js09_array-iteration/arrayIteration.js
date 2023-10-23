@@ -106,12 +106,10 @@ const salaries = [10000, 15000, 9000, 20000]
 const sumOfSalaries = salaries.reduce((sum, sal) => sum + sal, 0)
 console.log("TOTAL:", sumOfSalaries)
 
-let result
 const sumOfSalaries1 = salaries.reduce((sum, sal, i) => {
-  result = `${i} ${sum + sal}`
-  console.log(result)
+  console.log(`${i} - ${sum + sal}`)
   return sum + sal
-})
+}, 0)
 console.log("TOTAL:", sumOfSalaries1)
 
 const numbers = [3, 2, 5, 4]
