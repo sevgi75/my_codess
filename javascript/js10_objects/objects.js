@@ -63,3 +63,99 @@ console.log(arac)
 
 arac.sunroof = true
 console.log(arac)
+
+//* ==========================================
+//*          Object Metotlari
+//* ==========================================
+
+const personel = {
+  adi: "Ahmet",
+  soyadi: "Can",
+  dogum: 1990,
+  maas: 15000,
+  ehliyet: true,
+  diller: ["English", "German"],
+  yasHesapla: function () {
+    console.log(this)
+    return new Date().getFullYear() - this.dogum
+  },
+  //   ozet: () => {
+  //     console.log(this)
+  //     return `${this.adi} ${this.soyadi} ${this.yasHesapla()} yasindadir`
+  //   },
+  ozet: function () {
+    console.log(this)
+    return `${this.adi} ${this.soyadi} ${this.yasHesapla()} yasindadir`
+  },
+}
+console.log(this)
+console.log(personel.yasHesapla())
+console.log(personel.ozet())
+// console.log(new Date().getFullYear())
+
+//! NOT: arrow fonksiyonlari ozellikle callback fonksiyonu olarak
+//! kullanilmak ve bu fonksiyonlarda this keyword kullanim
+//! gereksinimini kaldirmak icin gelistirilmistir.
+//! Lexical context'e sahiptirler.Dolayisiyla, bir obje fonksiyonu
+//! olarak kullanilirsa, this kelimesi global scope'u (window nesnesini)
+//! gösterir. Bunu engellemek için object fonksiyonlarini tanimlarken
+//! diger (func. expression veya declaration) yontemlerini kullanabilir.
+
+//********************************************************
+//* JSON => Javascript Object Notation
+//********************************************************
+
+//? Nested objeler
+//? Objeler normalde iterable degildir. Ancak for-in for-of gibi donguler ile ozel metotlar yardımıyla itere edilebilirler.
+const people = {
+  ahmet: {
+    adi: "Ahmet",
+    soyadi: "Can",
+  },
+  canan: {
+    adi: "Canan",
+    soyadi: "Can",
+  },
+}
+
+console.log(people.ahmet.adi)
+console.log(people.canan.soyadi)
+
+//? JSON
+
+const peopleJSON = [
+  { adi: "Ahmet", soyadi: "Can" },
+  { adi: "Canan", soyadi: "Can" },
+]
+
+console.log(peopleJSON[0].adi) //? Ahmet
+
+const team = [
+  { name: "Ahmet", surname: "Can", job: "Developer", age: 30 },
+  { name: "Mary", surname: "Bary", job: "tester", age: 22 },
+  { name: "Hazel", surname: "Nut", job: "developer", age: 20 },
+]
+console.log("*********")
+//* Ornek1: team dizisindeki job'lari tek tek yazdiriniz.
+team.forEach((t) => console.log(t.job))
+
+//* Ornek2: team dizisindeki name'leri bir diziye saklayalim.
+const names = team.map((t) => t["name"])
+console.log(names)
+
+//* Ornek3: team dizisindeki kisilerin yas toplamini bulalim.
+const totalAge = team.reduce((acc, p) => acc + p.age, 0)
+console.log(totalAge)
+
+//* Ornek4: name ve surname'leri birlestirip buyuk harfe ceviren ve
+//* bunu fullName key'i ile saklayan, ayni zamanda age degerlerini 5
+//* arttirarak age key'ine saklayan ve olusan diziyi donduren kodu yazınız.
+
+const concatinatedNames = team.map((p) => {
+  return {
+    fullName: `${p.name.toUpperCase()} ${p.surname.toUpperCase()}`,
+    age: p.age + 5,
+  }
+})
+
+console.log(concatinatedNames)
