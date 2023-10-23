@@ -97,4 +97,25 @@ const dokuzBindenAz = maaslar.filter((m) => m < 9000).map((m) => m * 1.5)
 
 console.log(dokuzBindenAz)
 
+//* =======================================
+//*             REDUCE METHOD
+//* =======================================
+
+const salaries = [10000, 15000, 9000, 20000]
+
+const sumOfSalaries = salaries.reduce((sum, sal) => sum + sal, 0)
+console.log("TOTAL:", sumOfSalaries)
+
+let result
+const sumOfSalaries1 = salaries.reduce((sum, sal, i) => {
+  result = `${i} ${sum + sal}`
+  console.log(result)
+  return sum + sal
+})
+console.log("TOTAL:", sumOfSalaries1)
+
+
+
+
+
 
