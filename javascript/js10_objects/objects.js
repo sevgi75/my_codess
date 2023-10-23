@@ -159,3 +159,10 @@ const concatinatedNames = team.map((p) => {
 })
 
 console.log(concatinatedNames)
+
+const concatinatedNames1 = team.map((p) => ({
+  fullName: `${p.name.toUpperCase()} ${p.surname.toUpperCase()}`,
+  age: p.age + 5,
+}))
+
+console.log(concatinatedNames1)
