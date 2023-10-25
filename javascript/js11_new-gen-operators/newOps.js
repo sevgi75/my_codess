@@ -65,6 +65,54 @@ const {
 
 console.log(soyadi)
 
+//* Example
+const team = [
+    {
+      name: "Josh",
+      surname: "Barry",
+      job: "developer",
+      age: 30,
+    },
+    {
+      name: "John",
+      surname: "Barry",
+      job: "tester",
+      age: 45,
+    },
+    {
+      name: "Hazel",
+      surname: "Nut",
+      job: "team lead",
+      age: 40,
+    },
+  ]
+  console.log("************")
+  
+  //? Klasik yontem ile
+  team.forEach((p) => {
+    console.log("NAME:", p.name)
+    console.log("SURNAME:", p.surname)
+    console.log("JOB:", p["job"])
+    console.log("AGE:", p["age"])
+  })
+  console.log("**** DEST ****")
+  //? Destr
+  team.forEach((person) => {
+    const { name, surname, age, job } = person
+    console.log("NAME:", name)
+    console.log("SURNAME:", surname)
+    console.log("JOB:", job)
+    console.log("AGE:", age)
+    console.log("------------")
+  })
+
+//!----  FUNCTIONLARDA DEATRUC. KULLANIMI ----
+function kisiOkuDeclaration () {
+  
+}
+
+const kisiOku = function () {}
+
 
 
 //* ======================================================
