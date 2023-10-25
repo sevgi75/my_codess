@@ -212,3 +212,92 @@ console.log("SUM-ALL:", sumAll(3, 4, 5))
 //*==================================================
 //*  SPREAD (...)
 //* =================================================
+//? Spread operatoru ise iterables olan bir elemani bireysel
+//? degerler haline getirir.
+
+const ucanAraclar = ["helicopter", "drone", "ucak", "fuze"]
+const karaAracları = ["araba", "bisiklet", "marti"]
+
+const tasitlar = [ucanAraclar, karaAracları] //!nested array
+console.log(tasitlar)
+console.log(tasitlar[1][2])
+
+const tasitlarFlat = [...karaAracları, "hoverCraft", "gemi", ...ucanAraclar]
+console.log(tasitlarFlat)
+
+//?Ornek:
+const slogan = "Reinvent Your self"
+const sloganArray = [...slogan]
+console.log(sloganArray)
+
+//?Ornek:
+//? Spread ile bir iterable(array), non-iterable'a cevirlebilir.
+const sayilar = [2, 4, 5, 13, 56, 23]
+console.log(Math.max(...sayilar))
+
+const ciftler = [2, 4, 6]
+const tekler = [1, 3, 5]
+
+const yeniSayilar = ciftler //? Sig Kopyalama (Derin Kopyalama)
+
+console.log(yeniSayilar, ciftler)
+yeniSayilar.push(8)
+console.log(yeniSayilar, ciftler)
+
+//? Kopyalama Spread ile yapilirsa
+const yeniArraySpread = [...ciftler]
+console.log(yeniArraySpread, ciftler)
+
+//? Spread ile yapılan kopyalamada tam olarak sig kopyalama gerceklesmez. Dolayısiyla birisindeki degisiklik digerine yansımaz.
+//? ISTISNA: Eger dizide nesting (içiçe veri) varsa onlar icin sig kopyalama gibi calisir.
+yeniArraySpread.push(10)
+console.log(yeniArraySpread, ciftler)
+
+//? Tamamen Deep Kopyalama icin JSON.stringfy() - JSON.parse()
+
+//? Object copying
+
+const firstObj = { a: 1, b: 2, c: 3 }
+const secondObj = { a: 2, d: 3, c: 4 }
+
+const copiedFirstObj = { ...firstObj }
+console.log(copiedFirstObj)
+
+copiedFirstObj.a = 44
+
+//? nesting olmadigi icin deep copy gibi davranir.
+console.log(copiedFirstObj, firstObj)
+
+const combinedObjs = { ...firstObj, ...secondObj }
+console.log(combinedObjs)
+
+//? nested
+const sahislar = {
+    sahis1: {
+      name: "Can",
+      surname: "Canan",
+      dob: "1990",
+      job: "developer",
+      salary: "140000",
+      drivingLicense: true,
+    },
+    sahis2: {
+      name: "John",
+      surname: "Sweet",
+      dob: "1990",
+      job: "tester",
+      salary: "110000",
+      drivingLicense: false,
+    },
+    sahis3: {
+      name: "Steve",
+      surname: "Job",
+      dob: "2000",
+      job: "developer",
+      salary: "90000",
+      drivingLicense: true,
+    },
+  }
+  
+  console.log("MAAS:", sahislar.sahis1.salary)
+  
