@@ -34,10 +34,12 @@ div i{
 
 @keyframes snake {
     from{
-        transform: skew(45deg);
+        /* transform: skew(45deg); */
+        transform: rotate(0deg);
     }
     to{
-        transform: skew(-45deg);
+        /* transform: skew(-45deg); */
+        transform: rotate(360deg);
         color: maroon;
     }
     
