@@ -8,12 +8,15 @@
     width: 50%;
     height: 50%;
 
-    animation-name: travel;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+    /* animation: name duration timing - function delay iteration-count direction fill-mode*/
+
+    /* animation-name: travel; */
+    /* animation-duration: 2s; */
+    /* animation-iteration-count: infinite; */
+    /* animation-direction: alternate; gittigi yerden geri geliyor */
     /* animation-delay: 2s; */
-    animation-fill-mode: both;
+    /* animation-fill-mode: both; */
+    animation: travel 1s ease-in-out infinite alternate;
 
     
 }
