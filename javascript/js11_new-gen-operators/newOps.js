@@ -155,15 +155,44 @@ productPrint(data)
 productPrintDestr(data)
 productPrintDestrV2(data)
 
-
-
 //* ======================================================
 //*  DESTRUCTURING (ARRAY)
 //* ======================================================
 
+const people = ["Ali", "Veli", "Can", "Canan"]
+
+console.log(people[1])
+
+//? Array destr. sıra önemlidir.
+const [p1, p2, , p4] = people
+console.log(p4)
+
 //*======================================================
 //*  REST (...)
 //* ======================================================
+
+//? REST operatoru kullanici tarafindan girilen degerleri dizi
+//? icerisine konumlandirir. Cesitli kullanim alanlari vardir.
+
+//! 1- Bir dizi veya object'deki bazi degerlerden geri kalanlarini
+//!    ayri dizi yada objelere kopyalanmasini saglayabilir.
+
+//?REST Array
+const araclar = ["ATV", "Araba", "Kamyonet", "TIR", "Kamyon"]
+
+const [a1, a2, ...geriKalanAraclar] = araclar
+console.log(geriKalanAraclar, a1, a2)
+
+//?REST Object
+const veri = {
+  id: "1",
+  brand: "Apple",
+  product: "Iphone15",
+  stock: 100,
+}
+
+const { id, ...productStock } = veri
+console.log(productStock)
 
 //*==================================================
 //*  SPREAD (...)
