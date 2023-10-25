@@ -146,8 +146,14 @@ const productPrintDestr = (data) => {
   console.log(`${brand}-${product}: ${stock}`)
 }
 
+//? Alternatif destr (Havada veya Yolda)
+const productPrintDestrV2 = ({ brand, product, stock }) => {
+    console.log(`${brand}-${product}: ${stock}`)
+  }
+
 productPrint(data)
 productPrintDestr(data)
+productPrintDestrV2(data)
 
 
 
