@@ -38,6 +38,7 @@
       bottom: 52px;
       left: 33%;
       z-index: 2;
+      animation: hop-up 0.5s linear alternate infinite;
   }
   
   @keyframes left-move {
@@ -46,4 +47,16 @@
           transform: translate(-2000px);
       }
       
+  }
+
+  @keyframes hop-up{
+    0%{
+        transform: translateY(-2px);
+    }
+    50%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(2px);
+    }
   }
