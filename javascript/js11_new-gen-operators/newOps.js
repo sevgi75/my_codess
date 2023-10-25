@@ -181,7 +181,8 @@ console.log(p4)
 const araclar = ["ATV", "Araba", "Kamyonet", "TIR", "Kamyon"]
 
 const [a1, a2, ...geriKalanAraclar] = araclar
-console.log(geriKalanAraclar, a1, a2)
+console.log(geriKalanAraclar) //? ["Kamyonet", "TIR", "Kamyon"]
+
 
 //?REST Object
 const veri = {
@@ -191,8 +192,22 @@ const veri = {
   stock: 100,
 }
 
-const { id, ...productStock } = veri
+const { id, product, ...productStock } = veri
 console.log(productStock)
+
+//! 2- Bir fonksiyonun argumanlarini diziye cevirmek icin kullanilabilir.
+
+const sum = (a, b) => a + b
+
+//? REST (...) ile non-iterable olan sayilari iterable hale (diziye) cevirmiş olduk.
+const sumAll = (...numbers) => {
+  // console.log(numbers)
+  return numbers.reduce((acc, val) => acc + val)
+}
+
+console.log("SUM:", sum(2, 5, 6, 7, 8))
+console.log("SUM-ALL:", sumAll(2, 5, 6, 7, 8))
+console.log("SUM-ALL:", sumAll(3, 4, 5))
 
 //*==================================================
 //*  SPREAD (...)
