@@ -106,12 +106,48 @@ const team = [
     console.log("------------")
   })
 
-//!----  FUNCTIONLARDA DEATRUC. KULLANIMI ----
-function kisiOkuDeclaration () {
+//!----  FUNCTIONLARDA DESTRUC. KULLANIMI ----
+// function kisiOkuDeclaration () {
   
+// }
+
+const kisiOku = function () {
+   return {
+    no: "1234567890",
+    isim: "Ahmet",
+    soyisim: "Can",
+    is: "Kasap",
+    dilSayisi:2,
+   }
 }
 
-const kisiOku = function () {}
+// console.log("KISI:", kisiOku);
+
+//* function'un dondurdugu obje dogrudan dest. yapilabilir
+let { no, isim, soyisim, dilSayisi } = kisiOku()
+
+dilSayisi++
+console.log(no, isim, dilSayisi)
+
+//? Parameter olarak objenin ve destr. kullanimi
+const data = {
+  id: "1",
+  brand: "Apple",
+  product: "Iphone15",
+  stock: 100,
+}
+
+const productPrint = (data) => {
+  console.log(`${data.brand}-${data["product"]}: ${data.stock}`)
+}
+
+const productPrintDestr = (data) => {
+  const { brand, product, stock } = data
+  console.log(`${brand}-${product}: ${stock}`)
+}
+
+productPrint(data)
+productPrintDestr(data)
 
 
 
