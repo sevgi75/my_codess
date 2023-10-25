@@ -300,4 +300,33 @@ const sahislar = {
   }
   
   console.log("MAAS:", sahislar.sahis1.salary)
+
+//! FOR - IN
+//* for (key in object) {
+//*   // code block to be executed
+//* }
+
+for (let s in sahislar) {
+    // console.log(s)
+    // console.log(sahislar[s]) //? square bracket notasyon
+    console.log(sahislar[s].salary) //? square bracket notasyon
+  }
   
+  //? Javascript'de Objeler default olarak iterable degildir.
+  //? Ama for in ve for of donguleri ile itere edilebilirler.
+  
+  //? Objelerin key ve value'larini okumak icin built-in metotlar vardir.
+  //? Bu mettotlar aslinda objelerin key ve/veya value'lari bir dizi olarak dondurur.
+  console.log(Object.keys(sahislar))
+  console.log(Object.values(sahislar))
+  console.log(Object.entries(sahislar))
+  
+  //! FOR - OF
+  //* for (x of iterable) {
+  //*   code block to be executed
+  //* }
+  
+  console.log("****************")
+  for (let key of Object.keys(sahislar)) {
+    console.log(key)
+  }  
