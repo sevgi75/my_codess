@@ -1,0 +1,14 @@
+:root{
+    --red:#dc3545;
+}
+
+
+/*!---------------------1-NAVBAR----------------*/
+.navbar-nav{
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.navbar .nav-link:hover{
+    color: var(--red);
+}         
