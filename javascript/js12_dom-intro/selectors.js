@@ -99,6 +99,22 @@ console.log(document.querySelector(".item-list"))
 //? tag almak için ()
 console.log(document.querySelector("h3"))
 
+//? CSS selector
+console.log(document.querySelector("section.add-item #btn"))
+
+console.log(document.querySelector("ul li:nth-child(4)").innerText)
+
 //* ========================================
 //*              QUERYSELECTORALL()
 //* ========================================
+const itemLists = document.querySelectorAll("section.item-list li")
+console.log(itemLists) //? NodeList(5) [li.list, li.list, li.list, li.list, li.list]
+
+//* querySelectorAll bir nodelist dondurur. Nodelist dahali olarak forEach metmodunu barindirir. Ama istenirse spread veya Array.from() ile yine Array'e donusum yapilabilir.
+
+itemLists.forEach((li) => console.log(li))
+
+console.log("**********")
+for (let li of itemLists.values()) {
+  console.log(li)
+}
