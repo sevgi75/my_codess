@@ -46,3 +46,14 @@ if (myPar.classList.contains("border-danger")) {
 //? toggle metodu belitrilen class eger yok ise bu class'ı ekler
 //? eger belirtilen class var ise bu class'ı kaldırır.
 myPar.classList.toggle("text-danger")
+
+//* ------- YENI BIR ELEMENT OLUSTURMA (InnerHTML)------
+
+const ul = document.querySelector("ul")
+
+ul.innerHTML += ` 
+  <li id='deneme'>C++</li>
+  <li class="fw-bold">Java</li>
+  <li>Ruby</li>
+  <li>Asembly</li>
+`
