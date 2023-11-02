@@ -15,3 +15,8 @@ myPar.appendChild(text)
 const addItemSection = document.querySelector(".add-item")
 addItemSection.appendChild(myPar)
 //! Element.before()  ve Element.after() appenChild gibi aslında bir elementi DOM Tree'ye baglar.
+addItemSection.before(myPar) //? add-item section'ın hemen üzerine myPar'i baglar.
+
+//? React icerigine sahip olan li elementinin devamına yeni elemnti ekle
+const reactLi = document.querySelector("ul li:nth-child(4)")
+reactLi.after(myPar)
