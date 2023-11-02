@@ -20,3 +20,8 @@ addItemSection.before(myPar) //? add-item section'ın hemen üzerine myPar'i bag
 //? React icerigine sahip olan li elementinin devamına yeni elemnti ekle
 const reactLi = document.querySelector("ul li:nth-child(4)")
 reactLi.after(myPar)
+
+//* ------- ID, CLASS GIBI OZELLIKLERI ATAMA ------
+//? 1) Yontem
+myPar.id = "paragraf"
+myPar.className = "red center"
