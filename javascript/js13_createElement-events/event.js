@@ -4,8 +4,11 @@
 
 console.log("****** EVENTS *******")
 
+//? Selector variables
 const header = document.querySelector("header")
 const addButton = document.getElementById("btn")
+const input = document.querySelector("#input")
+const ul = document.querySelector("ul")
 
 //? 3. yontemle event tanimlandi
 //* mouse header 'ın üzerine geldiginde ilgili function cagrilir.
@@ -19,20 +22,31 @@ header.onmouseout = function () {
   header.style.color = "black"
 }
 
-//? 4.Yontem (addeventlistener metodu) ile event tanimlandi
-//* add butonuna tiklanildgin event funksiyonu cagrilir
-addButton.addEventListener("click", () => {
-    alert("Buton tiklanildi")
-  })
-  
-  const yazdir = () => {
+const yazdir = () => {
     document.write("Hello from Turkey")
   }
   
   //? onload event'ı html ve css kodlarininin render edilmesinin hemen akabinde calisir.
-  window.onload = yazdir()
+  // window.onload = yazdir()
   
+  //? window yüklendiginde input'a focuslan
   window.addEventListener("load", () => {
-    document.querySelector("#input").focus()
+    input.focus()
   })
+
+//? 4.Yontem (addeventlistener metodu) ile event tanimlandi
+//* add butonuna tiklanildgin event funksiyonu cagrilir
+addButton.addEventListener("click", () => {
+    if (!input.value.trim()) {
+      alert("Lütfen bir bilgi giriniz")
+    } else {
+      const li = document.createElement("li")
+      const text = document.createTextNode(input.value)
+      li.appendChild(text)
+      ul.appendChild(li)
+      input.value = ""
+      input.focus()
+    }
+  })
+  
   
