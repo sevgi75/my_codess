@@ -42,3 +42,7 @@ if (myPar.classList.contains("border-danger")) {
   myPar.classList.remove("border-danger")
   myPar.classList.add("border-primary")
 }
+
+//? toggle metodu belitrilen class eger yok ise bu class'ı ekler
+//? eger belirtilen class var ise bu class'ı kaldırır.
+myPar.classList.toggle("text-danger")
