@@ -25,3 +25,20 @@ reactLi.after(myPar)
 //? 1) Yontem
 myPar.id = "paragraf"
 myPar.className = "red center"
+myPar.name = "par"
+myPar.type = "button"
+
+//? 2) Yontem (setAttribute)
+
+myPar.setAttribute("id", "deneme")
+myPar.setAttribute("type", "button")
+myPar.setAttribute("class", "bg-warning border border-danger border-3")
+
+//? 3) Yontem (classList)
+myPar.classList.add("text-center")
+
+console.log(myPar.classList.contains("bg-warning"))
+if (myPar.classList.contains("border-danger")) {
+  myPar.classList.remove("border-danger")
+  myPar.classList.add("border-primary")
+}
