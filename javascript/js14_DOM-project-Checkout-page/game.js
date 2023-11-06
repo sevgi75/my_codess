@@ -22,5 +22,29 @@ document.querySelector(".check").addEventListener("click", () =>{
         mesaj.textContent = "Tebrikler Bildiniz👏"
         document.querySelector("body").style.backgroundColor = "green"
         document.querySelector(".number").textContent = rastgeleSayi
+
+        // Top score kontrolu
+
+    //! tahmin yanlissa    
+    }else{
+
+        //? Skor 1 den buyuk oldugu surece tahmin hakkim var
+
+        if (skor>1){
+
+            skor -- ;
+            document.querySelector(".score").textContent = skor
+
+            tahmin < rastgeleSayi 
+            ? mesaj.textContent = "Arttır👆" 
+            : mesaj.textContent = "Azalt👇"
+            // arttir azalt
+        }else {
+            mesaj.textContent = "Oyunu Kaybettiniz 😲"
+            document.querySelector(".score").textContent = 0;
+            document.querySelector("body").style.backgroundColor = "red"
+
+            //! Oyunu Kaybettiniz
+        }
     }
 })
