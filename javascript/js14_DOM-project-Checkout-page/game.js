@@ -24,6 +24,10 @@ document.querySelector(".check").addEventListener("click", () =>{
         document.querySelector(".number").textContent = rastgeleSayi
 
         // Top score kontrolu
+        if (skor > enYuksekSkor) {
+            enYuksekSkor = skor
+            document.querySelector(".top-score").textContent = enYuksekSkor
+        }
 
     //! tahmin yanlissa    
     }else{
@@ -46,5 +50,28 @@ document.querySelector(".check").addEventListener("click", () =>{
 
             //! Oyunu Kaybettiniz
         }
+    }
+})
+
+// Again butonuna basinca ayarlar baslangic degerlerine kurulun. Arka plan #2d3436 olsun
+
+document.querySelector(".again").onclick = () => {
+    document.querySelector("body").style.backgroundColor = "#2d3436"
+    rastgeleSayi = Math.ceil(Math.random()*20)
+
+    skor = 10;
+    document.querySelector(".score").textContent = skor
+    document.querySelector(".number").textContent = "?"
+    document.querySelector(".guess").value = ""
+    mesaj.textContent = "Oyun Yeni Oyuncu İçin Başlıyor"
+}
+
+//! ENTER
+
+// Klavyeden enter butonuna basildiginda check butonunu tetikle
+document.addEventListener("keydown", function(e){
+    if (e.key === "Enter") {
+        //Enter tusuna basildiginda check butonuna tikla
+        document.querySelector(".check").onclick()
     }
 })
