@@ -5,7 +5,12 @@ let mesaj = document.querySelector(".msg")
 
 let skor = 10 ;
 // skor'u index.html den cekebilirdik. Ama cok kullanacagimiz icin bu daha tercih edilen yol
-let enYuksekSkor = 0;
+
+//! local storage da top-score adiyla bir degisken varsa onu getir yoksa 0 olsun
+let enYuksekSkor = localStorage.getItem("top-score") || 0;
+
+//! ------browserda, DOM da top score degerini local storageden okuyarak guncelle, ozellikle 2. ve 3. oyuncular icin gerekli
+document.querySelector(".top-score").textContent = enYuksekSkor
 
 //? Her check butonuna basildiginda yapilacaklar
 
@@ -24,7 +29,10 @@ document.querySelector(".check").addEventListener("click", () =>{
         document.querySelector(".number").textContent = rastgeleSayi
 
         // Top score kontrolu
-        if (skor > enYuksekSkor) {            
+        if (skor > enYuksekSkor) {
+            
+            localStorage.setItem("top-score", skor)
+
             enYuksekSkor = skor
             document.querySelector(".top-score").textContent = enYuksekSkor
         }
