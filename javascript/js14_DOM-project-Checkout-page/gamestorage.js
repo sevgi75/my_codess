@@ -83,3 +83,18 @@ document.addEventListener("keydown", function(e){
         document.querySelector(".check").onclick()
     }
 })
+
+
+//! Gecersiz sayi girdiniz 1 ile 20 arasinda bir sayi girin
+document.querySelector(".check").addEventListener("click", () => {
+    tahmin = document.querySelector(".guess").value
+
+    const tahminSayi = parseInt(tahmin);
+
+    if (tahminSayi >= 1 && tahminSayi <= 20 && !isNaN(tahminSayi)){
+        //Dogru sayi girilmisse onu devam ettir
+    }else {
+        mesaj.textContent = "Gecersiz sayi girdiniz (1 ile 20 arasinda bir sayi giriniz)"
+        skor ++
+    }
+})
