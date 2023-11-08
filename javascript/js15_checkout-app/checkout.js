@@ -49,6 +49,12 @@ deleteProducts.addEventListener("click", (e) => {
 products.addEventListener("click", (e) => {
     console.log(e.target);
     if (e.target.classList.contains("fa-plus")) {
-        
+        //document.getElementById("quantity").innerText++
+        e.target.previousElementSibling.innerText++
+        calculateProductPrice(e.target)
     }
 })
+
+const calculateProductPrice = (btn) => {
+    console.log(btn.closest(".product-info").querySelector("#discounted-price"));
+}
