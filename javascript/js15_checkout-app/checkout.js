@@ -56,5 +56,17 @@ products.addEventListener("click", (e) => {
 })
 
 const calculateProductPrice = (btn) => {
-    console.log(btn.closest(".product-info").querySelector("#discounted-price"));
+    const discountedPrice = btn
+    .closest(".product-info")
+    .querySelector("#discounted-price").textContent;
+
+    const quantity = btn
+    .closest(".buttons-div")
+    .querySelector("#quantity").textContent
+
+    const productPrice = btn
+    .closest(".buttons-div")
+    .querySelector("#product-price")
+
+    productPrice.textContent = discountedPrice * quantity
 }
