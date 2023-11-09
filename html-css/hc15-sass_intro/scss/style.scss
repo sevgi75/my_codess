@@ -1,8 +1,29 @@
-header {
-    background-color: aqua;
+// $bgColor: #444;
 
+body {
+    font-family: "Thoma";
+    font-size: 20px;
+    color: #444;
+}
+header {
+    background-color: #30a7c3;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     //? nested
     img {
-        width: 100px;
+        width: 150px;
+    }
+
+    ul {
+        list-style-type: none;
+        li {
+            display: inline-block;
+            a {
+                text-decoration: none;
+                color: white;
+            }
+        }
     }
 }
