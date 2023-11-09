@@ -85,17 +85,23 @@ const calculateProductPrice = (btn) => {
     .closest(".buttons-div")
     .querySelector("#product-price")
 
-    productPrice.textContent = discountedPrice * quantity
+    productPrice.textContent = (discountedPrice * quantity).toFixed(2)
+    calculateTotalPrice()
 }
 
 const calculateTotalPrice = () => {
     const prices = document.querySelectorAll("#product-price")
 
 
-    //?
+    //? Selected Product Hesabi
     const subtotal = [...prices].reduce((sum, price) => sum + Number(price.textContent), 0)
+
+    //? Shipping
+    const shippingPrice = subtotal >= FREE_SHIPPING_LIMIT || subtotal === 0 ? 0 : SHIPPING_PRICE
 
 
     //? Hesaplanan dgerlerin DOM'a basilmasi
     document.getElementById("selected-price").textContent = subtotal.toFixed(2)
+
+    document.getElementById("shipping").textContent = shippingPrice.toFixed(2)
 }
