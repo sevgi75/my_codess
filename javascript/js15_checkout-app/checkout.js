@@ -31,11 +31,13 @@ const products = document.querySelector(".products")
 //! EVENTS
 //? Delete Products Button event
 deleteProducts.addEventListener("click", (e) => {
-    if (confirm("Silmek istedigine eminmisiniz")) {
-        products.textContent = "No product"
-        products.classList.add("no-product")
+    if (confirm("Are you sure")) {
+        noProductCheck()
+        calculateTotalPrice()
+        // products.textContent = "No product"
+        // products.classList.add("no-product")
         // document.querySelector(".delete-div").style.display = "none"
-        e.target.parentElement.style.display = "none"
+        // e.target.parentElement.style.display = "none"
     }
 
 })
@@ -67,7 +69,7 @@ products.addEventListener("click", (e) => {
         }    
     }else if (e.target.classList.contains("fa-trash-can")) {
             e.target.closest(".product").remove()
-            // calculateProductPrice(e.target)
+            calculateTotalPrice()
     }
     
 })
@@ -114,4 +116,22 @@ const calculateTotalPrice = () => {
     document.getElementById("tax").textContent = taxPrice.toFixed(2)
 
     document.getElementById("total").textContent = totalPrice.toFixed(2)
+
+    !taxPrice && noProductCheck()
+
+    // if (!totalPrice) {
+    //     products.textContent = "No Product"
+    //     products.classList.add("no-product")
+    //     document.querySelector(".delete-div").style.display = "none"
+    // }
 }
+
+const noProductCheck = () => {
+    products.textContent = "No Product"
+    products.classList.add("no-product")
+    document.querySelector(".delete-div").style.display = "none"
+}
+
+window.addEventListener("load", () => {
+    calculateTotalPrice()
+})
