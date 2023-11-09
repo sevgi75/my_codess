@@ -19,9 +19,17 @@
 //     })
 // }
 
+//! CONSTANTS
+const SHIPPING_PRICE = 25.99
+const FREE_SHIPPING_LIMIT = 3000
+const TAX_RATE = 0.18
+
+//! SELECTORS
 const deleteProducts = document.querySelector(".delete-div .fa-trash-can")
 const products = document.querySelector(".products")
 
+//! EVENTS
+//? Delete Products Button event
 deleteProducts.addEventListener("click", (e) => {
     if (confirm("Silmek istedigine eminmisiniz")) {
         products.textContent = "No product"
@@ -56,8 +64,12 @@ products.addEventListener("click", (e) => {
         if (e.target.nextElementSibling.innerText > 1) {
             e.target.nextElementSibling.innerText--
             calculateProductPrice(e.target)
-        }
+        }    
+    }else if (e.target.classList.contains("fa-trash-can")) {
+            e.target.closest(".product").remove()
+            // calculateProductPrice(e.target)
     }
+    
 })
 
 const calculateProductPrice = (btn) => {
@@ -74,4 +86,16 @@ const calculateProductPrice = (btn) => {
     .querySelector("#product-price")
 
     productPrice.textContent = discountedPrice * quantity
+}
+
+const calculateTotalPrice = () => {
+    const prices = document.querySelectorAll("#product-price")
+
+
+    //?
+    const subtotal = [...prices].reduce((sum, price) => sum + Number(price.textContent), 0)
+
+
+    //? Hesaplanan dgerlerin DOM'a basilmasi
+    document.getElementById("selected-price").textContent = subtotal.toFixed(2)
 }
