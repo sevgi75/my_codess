@@ -99,9 +99,19 @@ const calculateTotalPrice = () => {
     //? Shipping
     const shippingPrice = subtotal >= FREE_SHIPPING_LIMIT || subtotal === 0 ? 0 : SHIPPING_PRICE
 
+    //? tax hesabi
+    const taxPrice = subtotal * TAX_RATE
 
-    //? Hesaplanan dgerlerin DOM'a basilmasi
+    //? total deger
+    const totalPrice = subtotal + shippingPrice + taxPrice
+
+
+    //! Hesaplanan dgerlerin DOM'a basilmasi
     document.getElementById("selected-price").textContent = subtotal.toFixed(2)
 
     document.getElementById("shipping").textContent = shippingPrice.toFixed(2)
+
+    document.getElementById("tax").textContent = taxPrice.toFixed(2)
+
+    document.getElementById("total").textContent = totalPrice.toFixed(2)
 }
