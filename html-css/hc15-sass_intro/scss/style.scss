@@ -109,3 +109,31 @@ header {
     }
     //* ustteki kodlari uzun uzun yazmak yerine article1 elementinden miras aldik. Degistirmek istedigimiz degerleride @extend isleminden sonraki satirlara yaziyoruz    
 }
+//!  for loop
+
+footer {
+    p {
+        background-color: $bannerBgColor;
+    }
+    .social-icons {
+        display: flex;
+
+        //? Dizi
+        $textColors : black, red, green, blue, orange;
+
+        @for $i from 1 through length($textColors) {
+            .social#{$i} {
+                flex: 1;
+                font-size: $i * 1rem;
+                //background-color: darken(gray, $i * 3);
+                @if $i%2 == 0 {
+                    background-color: darken(yellow, $i * 3);
+                }@else {
+                    background-color: darken(red, $i * 3);
+                }
+
+                color: nth($textColors, $i)
+            }
+        }
+    }
+}
