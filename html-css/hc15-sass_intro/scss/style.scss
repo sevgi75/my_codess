@@ -1,5 +1,6 @@
 @import "variables" ;
 @import "reset";
+@import "mixins";
 
 // $bgColor: #444;
 
@@ -69,4 +70,42 @@ header {
         max-width: 600px;
         min-width: 300px;
     }
+}
+
+//? cards
+.cards {
+    display: flex;
+    gap: 0.4rem;
+    margin-top: 1rem;
+    .card1 {
+        @include card(yellow, black)
+    }
+    .card2 {
+        @include card(red, yellow)
+    }
+    .card3 {
+        @include card(black, white)
+    }
+    .card4 {
+        @include card(blue, yellow)
+    }
+}
+
+//?Articles
+.articles {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    .article1 {
+        background-color: gray;
+        flex: 1;
+        height: 10rem;
+        border-radius: 10px;
+        padding: 1rem;
+    }
+    .article2 {
+        @extend .article1;
+        background-color: green;       
+    }
+    //* ustteki kodlari uzun uzun yazmak yerine article1 elementinden miras aldik. Degistirmek istedigimiz degerleride @extend isleminden sonraki satirlara yaziyoruz    
 }
