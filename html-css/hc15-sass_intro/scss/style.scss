@@ -9,6 +9,8 @@ body {
     color: $fontColor;
     background-color: $bgColor;
 }
+
+//? Header
 header {
     background-color: $navBgColor;
     padding: 1rem;
@@ -17,7 +19,12 @@ header {
     align-items: center;
     //? nested
     img {
-        width: 150px;
+        width: 80px;
+        border: $myBorder;
+        border-radius: 10px;
+        &:hover {
+            scale: 1.1;
+        }
     }
 
     ul {
@@ -28,7 +35,20 @@ header {
             a {
                 text-decoration: none;
                 color: white;
+                &:hover {
+                    text-decoration: underline;
+                }
             }
         }
     }
+}
+
+//? Banner
+.banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: $bannerBgColor;
+    line-height: 2rem;
 }
