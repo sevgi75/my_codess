@@ -5,8 +5,13 @@
 //@use "./abstracts/color" as c;
 //@use "./abstracts/variables" as *;
 
+
+//? BASE-ABSTRACTS
 @use "./abstracts/variables" as v;
-@use"./base/reset";
+@use "./base/reset";
+
+//? COMPONENTS
+@use "./components/navbar";
 
 //? FONTS AND 3RD PARTY
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");

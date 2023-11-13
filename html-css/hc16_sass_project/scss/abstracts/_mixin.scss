@@ -1,1 +1,6 @@
 // mixin
+@mixin flex($jc, $ai:center) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+}
