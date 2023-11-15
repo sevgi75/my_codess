@@ -17,13 +17,18 @@ const kalanTd = document.getElementById("kalan")
 
 // Ekle formu
 
-ekleFormu.addEventListener("click", (e) => {
+ekleFormu.addEventListener("submit", (e) => {
     e.preventDefault()
     gelirler = gelirler + Number(gelirInput.value)
-    console.log(gelirler);
+    // console.log(gelirler);
     localStorage.setItem("gelirler", gelirler)
     gelirinizTd.innerText = gelirler
     ekleFormu.reset()
+})
+
+window.addEventListener("load", () => {
+    gelirler = Number(localStorage.getItem("gelirler")) || 0;
+    gelirinizTd.innerText = gelirler
 })
 
 
