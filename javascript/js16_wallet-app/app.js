@@ -8,6 +8,7 @@ const ekleFormu = document.getElementById("ekle-formu")
 // variables
 
 let gelirler = 0;
+let harcamaListesi = []
 
 // Hesap tablosu
 const gelirinizTd = document.getElementById("geliriniz")
@@ -38,6 +39,49 @@ ekleFormu.addEventListener("submit", (e) => {
 window.addEventListener("load", () => {
     gelirler = Number(localStorage.getItem("gelirler")) || 0;
     gelirinizTd.innerText = gelirler
+    tarihInput.valueAsDate = new Date()
+})
+
+harcamaFormu.addEventListener("submit", (e) => {
+    e.preventDefault() // reload u engeller
+
+    const yeniHarcama = {
+        id: new Date().getTime(),
+        tarih: tarihInput.value,
+        alan: harcamaAlaniInput.value,
+        miktar: miktarInput.value
+
+    }
+    // console.log(yeniHarcama);
+    harcamaFormu.reset()
+    tarihInput.valueAsDate = new Date()
+    harcamaListesi.push(yeniHarcama)
+    localStorage.setItem("harcamalar", JSON.stringify(harcamaListesi))
 })
 
 
+// Harcamayi DOM'a yaz
+
+const harcamayiDomaYaz = ({id, miktar, tarih, alan}) => {
+    // const {id, miktar, tarih, alan} = yeniHarcama
+
+    //? 1.yontem
+
+    // harcamaBody.innerHTML += `
+    // <tr>
+    // <td>${tarih}</td>
+    // <td>${alan}</td>
+    // <td>${miktar}</td>
+    // <td><i id=${id} class= "fa-solid fa-trash-can text-danger" type="button"></i></td>
+    // </tr>
+    // `
+
+    //? 2. yontem
+    const tr = document.createElement("tr")
+
+    const appendTd = (content) => {
+        const td = document.createElement("td")
+        td.textContent = content
+        return td
+    }
+}
