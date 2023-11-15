@@ -55,8 +55,10 @@ harcamaFormu.addEventListener("submit", (e) => {
     // console.log(yeniHarcama);
     harcamaFormu.reset()
     tarihInput.valueAsDate = new Date()
+
     harcamaListesi.push(yeniHarcama)
     localStorage.setItem("harcamalar", JSON.stringify(harcamaListesi))
+    harcamayiDomaYaz(yeniHarcama)
 })
 
 
@@ -84,4 +86,24 @@ const harcamayiDomaYaz = ({id, miktar, tarih, alan}) => {
         td.textContent = content
         return td
     }
+
+    const createLastTd = () => {
+        const td = document.createElement("td")
+        const iElement = document.createElement("i")
+        iElement.id = id
+        iElement.className = "fa-solid fa-trash-can text-danger"
+        iElement.type = "button"
+        td.appendChild(iElement)
+        return td
+    }
+
+    tr.append(
+        appendTd(tarih),
+        appendTd(alan),
+        appendTd(miktar),
+        createLastTd()
+    )
+
+    harcamaBody.append(tr) // harcamayi sona ekler
+    //harcamaBody.prepend(tr) // harcamayi öne ekler
 }
