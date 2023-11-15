@@ -14,6 +14,15 @@ const gelirinizTd = document.getElementById("geliriniz")
 const giderinizTd = document.getElementById("gideriniz")
 const kalanTd = document.getElementById("kalan")
 
+// Harcama Formu
+const harcamaFormu = document.getElementById("harcama-formu")
+const harcamaAlaniInput = document.getElementById("harcama-alani")
+const tarihInput = document.getElementById("tarih")
+const miktarInput = document.getElementById("miktar")
+
+// Harcama Tablosu
+const harcamaBody = document.getElementById("harcama-body")
+const temizleBtn = document.getElementById("temizle-btn")
 
 // Ekle formu
 
