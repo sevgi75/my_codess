@@ -126,8 +126,29 @@ const hesaplaVeGuncelle = () => {
     kalanTd.innerText = gelirler - giderler
 
     const borclu = gelirler - giderler < 0;
-    console.log(borclu);
+    // console.log(borclu);
 
     kalanTd.classList.toggle("text-danger", borclu)
     kalanTh.classList.toggle("text-danger", borclu)
 }
+
+harcamaBody.addEventListener("click", (e) => {
+    // console.log(e.target);
+
+    if (e.target.classList.contains("fa-trash-can")) {
+        e.target.parentElement.parentElement.remove()
+    }
+    // silinen harcamanin id sini alir
+    const id = e.target.id
+    // console.log(id);
+
+    // silinen harcamayi array den cikarir
+    harcamaListesi = harcamaListesi.filter((harcama => harcama.id != id))
+
+    // yeni array i local e update eder
+    localStorage.setItem("harcamalar", JSON.stringify(harcamaListesi))
+
+    // silindikten sonra yeniden hesapla
+
+    hesaplaVeGuncelle()
+})
