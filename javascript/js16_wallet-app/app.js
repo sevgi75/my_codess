@@ -117,14 +117,17 @@ const harcamayiDomaYaz = ({id, miktar, tarih, alan}) => {
 }
 
 const hesaplaVeGuncelle = () => {
-    gelirinizTd.innerText = gelirler // geliri ekrana yaz
+    //gelirinizTd.innerText = gelirler // geliri ekrana yaz
+    gelirinizTd.innerText = new Intl.NumberFormat().format(gelirler) // geliri ekrana yaz
     
     // giderler toplamini bul
     const giderler = harcamaListesi.reduce(
         (toplam, harcama) => toplam + Number(harcama.miktar),0
     )
-    giderinizTd.innerText = giderler  // gider toplamini ekrana yaz
-    kalanTd.innerText = gelirler - giderler
+    //giderinizTd.innerText = giderler  // gider toplamini ekrana yaz
+    giderinizTd.innerText = new Intl.NumberFormat().format(giderler)  // gider toplamini ekrana yaz
+    //kalanTd.innerText = gelirler - giderler
+    kalanTd.innerText = new Intl.NumberFormat().format(gelirler - giderler)
 
     const borclu = gelirler - giderler < 0;
     // console.log(borclu);
