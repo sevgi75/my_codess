@@ -32,25 +32,35 @@
 // // console.log("Bitti");
 // console.timeEnd("basla") //? timer'i bitir ve gecen sureyi goster
 
-//* Asenkron (setTimeout())
+//* Asenkron (setTimeout()) - Belirli sure sonraya zaman kurar
 //* -------------------------------------------------------
-//? Asenkron Kod (macrotask)
-const timeoutId = setTimeout(() => {
-    console.log("Sure doldu");
-}, 1000)
+//? Asenkron Kod (macrotask kuyrugu)
+// const timeoutId = setTimeout(() => {
+//     console.log("Sure doldu");
+// }, 1000)
 
-const timeout2 = setTimeout(() => {
-    console.log("timeout2 doldu");
-}, 500)
+// setTimeout(() => {
+//     console.log("timeout2 doldu");
+// }, 500)  //? en az 500ms sonrasinda tetikleme olur
 
-console.log("Timeout Kuruldu"); // ? senkron
-
-
-
-console.log("Timeout bitti"); //? senkron kod
+// console.log("Timeout Kuruldu"); // ? senkron
 
 
 
+// console.log("Timeout bitti"); //? senkron kod
+
+//clearTimeout(timeoutId) //? timeout iptal eder
+
+//* Asenkron (setInterval, clearInterval) - Periyodik bir aralik belirler
+//* ------------------------------------------------------------
+// let i = 0
+// const zaman = setInterval(() => {
+//     console.log(++i);
+//     if (i >= 5) {
+//       clearInterval(zaman)
+//     }
+
+// }, 1000)
 
 //! Callback Hell (nested ve birbirine bagli callback'ler)
 //!-----------------------------------------------------
@@ -58,3 +68,23 @@ console.log("Timeout bitti"); //? senkron kod
 //* yapisinin kullanilmasi gerekebilir. Fakat bu iyi bir programlama yaklasimi degildir.
 // !callback hell olarak adlandirilan bu yapinin anlasilmasi ve surdurulebilirligi oldukca zordur.
 
+setTimeout(() => {
+    console.log("john:Hi") //? veri isteği (req)
+    setTimeout(() => {
+      console.log("Sarah: Hello") //? res geliyor
+      setTimeout(() => {
+        console.log("John: How Are you?") //? veri gonder
+        setTimeout(() => {
+          console.log("Sarah:Fine and you?") //?gondermeye baslaniyor
+        }, 1000)
+      }, 1000)
+    }, 1000)
+  }, 1000)
+  
+  //? COZUMLER:
+  //?----------------------------------------------------
+  //* 1- XMLHttpRequest (Eski yontem, Ornek: AJAX)
+  //? https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
+  //* 2- Promise (Custom async kod yazmak için elverişli- Advance)
+  //! 3- Fetch API (Promise'in basitlestirilmis hali),
+  //! 4- ASYNC-AWAIT (Fetch API'nin makyajlanmis hali)
