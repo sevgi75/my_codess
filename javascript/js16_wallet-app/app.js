@@ -152,3 +152,15 @@ harcamaBody.addEventListener("click", (e) => {
 
     hesaplaVeGuncelle()
 })
+
+temizleBtn.addEventListener("click", () => {
+    if (confirm("Silmek istediginize emin misiniz?")) {
+        harcamaListesi = [] // tum harcamalari listeden siler
+        gelirler = 0 // geliri sifirlar
+        // localStorage.clear() // tum local storage siler
+        localStorage.removeItem("gelirler") // sadece gelirleri siler
+        localStorage.removeItem("harcamalar") // sadece harcamalari siler
+        harcamaBody.innerHTML = "" // DOM dan harcamalari siler
+        hesaplaVeGuncelle()
+    }
+})
