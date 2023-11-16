@@ -19,7 +19,21 @@
 //* Senkron
 //* ------------------------------------------------
 
-// console.log("*** Senkron *** ")
+console.log("*** Senkron *** ")
+//alert("Alert")  //? Blocking
+console.log("FS15");
+
+const gecikme = (sure) => {
+    const basla = new Date().getTime()
+    while(new Date().getTime() < basla + sure) {}
+}
+console.time("basla")  //? timer 'i baslat
+gecikme(3000) //? 3000 ms 'lik bir bloklama
+// console.log("Bitti");
+console.timeEnd("basla") //? timer'i bitir ve gecen sureyi goster
+
+//* Asenkron (setTimeout())
+//* -------------------------------------------------------
 
 
 
