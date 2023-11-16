@@ -14,6 +14,7 @@ let harcamaListesi = []
 const gelirinizTd = document.getElementById("geliriniz")
 const giderinizTd = document.getElementById("gideriniz")
 const kalanTd = document.getElementById("kalan")
+const kalanTh = document.getElementById("kalanTh")
 
 // Harcama Formu
 const harcamaFormu = document.getElementById("harcama-formu")
@@ -34,12 +35,17 @@ ekleFormu.addEventListener("submit", (e) => {
     localStorage.setItem("gelirler", gelirler)
     gelirinizTd.innerText = gelirler
     ekleFormu.reset()
+    hesaplaVeGuncelle()
 })
 
 window.addEventListener("load", () => {
     gelirler = Number(localStorage.getItem("gelirler")) || 0;
     gelirinizTd.innerText = gelirler
     tarihInput.valueAsDate = new Date()
+    harcamaListesi = JSON.parse(localStorage.getItem("harcamalar")) || []
+
+    harcamaListesi.forEach((harcama) => harcamayiDomaYaz(harcama))
+    hesaplaVeGuncelle()
 })
 
 harcamaFormu.addEventListener("submit", (e) => {
@@ -59,6 +65,7 @@ harcamaFormu.addEventListener("submit", (e) => {
     harcamaListesi.push(yeniHarcama)
     localStorage.setItem("harcamalar", JSON.stringify(harcamaListesi))
     harcamayiDomaYaz(yeniHarcama)
+    hesaplaVeGuncelle()
 })
 
 
@@ -106,4 +113,21 @@ const harcamayiDomaYaz = ({id, miktar, tarih, alan}) => {
 
     harcamaBody.append(tr) // harcamayi sona ekler
     //harcamaBody.prepend(tr) // harcamayi öne ekler
+}
+
+const hesaplaVeGuncelle = () => {
+    gelirinizTd.innerText = gelirler // geliri ekrana yaz
+    
+    // giderler toplamini bul
+    const giderler = harcamaListesi.reduce(
+        (toplam, harcama) => toplam + Number(harcama.miktar),0
+    )
+    giderinizTd.innerText = giderler  // gider toplamini ekrana yaz
+    kalanTd.innerText = gelirler - giderler
+
+    const borclu = gelirler - giderler < 0;
+    console.log(borclu);
+
+    kalanTd.classList.toggle("text-danger", borclu)
+    kalanTh.classList.toggle("text-danger", borclu)
 }
