@@ -53,7 +53,8 @@ harcamaFormu.addEventListener("submit", (e) => {
 
     const yeniHarcama = {
         id: new Date().getTime(),
-        tarih: tarihInput.value,
+        // tarih: tarihInput.value,
+        tarih: new Date (tarihInput.value).toLocaleDateString(),
         alan: harcamaAlaniInput.value,
         miktar: miktarInput.value
 
