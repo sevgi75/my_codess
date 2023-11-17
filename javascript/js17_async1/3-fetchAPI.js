@@ -27,7 +27,7 @@ fetch("https://api.github.com/users")
     // console.log(veri)
     show(data)
   })
-  .catch((err) => document.write(err))
+  .catch((err) => showError(err))
 
 console.log(veri)
 
@@ -41,4 +41,11 @@ const show = (users) => {
         <p><a href="${user.html_url}" target="_blank">URL</a></p> 
     `
   })
+}
+
+const showError = (err) => {
+  const userSection = document.getElementById("users")
+  userSection.innerHTML = `<h1>${err}</h1>
+  <img src="./img/404.png" alt="">
+  `
 }
