@@ -22,7 +22,7 @@
 
 const getNews = async () => {
 
-    const API_KEY = "4c8668fd0dd8484f806177962a8c7b82k"
+    const API_KEY = "4c8668fd0dd8484f806177962a8c7b82"
     const BASE_URL = "https://newsapi.org/v2/"
     const queryString = "top-headlines?country=us&category=sport"
 
