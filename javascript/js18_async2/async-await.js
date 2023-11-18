@@ -22,7 +22,7 @@
 
 const getNews = async () => {
 
-    const API_KEY = "4c8668fd0dd8484f806177962a8c7b82"
+    const API_KEY = "4c8668fd0dd8484f806177962a8c7b82k"
     const BASE_URL = "https://newsapi.org/v2/"
     const queryString = "top-headlines?country=us&category=sport"
 
@@ -37,7 +37,11 @@ const getNews = async () => {
         const data = await res.json()
         renderNews(data.articles)
     } catch (error) {
-        console.log(error);        
+        const newsDiv = document.getElementById("news-div")
+        newsDiv.innerHTML = `
+            <h2>${error}</h2>
+            <img src="./img/404.png" alt="">        
+        `        
     }  
 
 }
