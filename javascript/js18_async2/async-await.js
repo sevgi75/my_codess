@@ -22,7 +22,7 @@
 
 const getNews = async () => {
 
-    const API_KEY = "4c8668fd0dd8484f806177962a8c7b82"
+    const API_KEY = "4c8668fd0dd8484f806177962a8c7b82r"
     const BASE_URL = "https://newsapi.org/v2/"
     const queryString = "top-headlines?country=de&category=sport"
 
@@ -30,12 +30,15 @@ const getNews = async () => {
 
     try {
         const res = await fetch(`${BASE_URL}${queryString}&apiKey=${API_KEY}`)
-    const data = await res.json()
-    console.log(data.articles);
+        //? Error handling
+        if (!res.ok) {
+            throw new Error(`Something went wrong: ${res.status}`)
+        }
+        const data = await res.json()
+        console.log(data.articles);
     } catch (error) {
         console.log(error);        
-    }   
-
+    }  
 
 }
 
