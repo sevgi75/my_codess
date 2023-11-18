@@ -48,12 +48,14 @@ const renderNews = (news) => {
         console.log(item);
         const {title, urlToImage, url, content} = item
         newsDiv.innerHTML += `
-        <div class="card" style="width: 18rem;">
-            <img src="${urlToImage}" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">${title}</h5>
-                <p class="card-text">${content}</p>
-                <a href="${url}" target="_blank" class="btn btn-primary">Detail</a>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="card">
+                <img src="${urlToImage}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">${title}</h5>
+                    <p class="card-text">${content}</p>
+                    <a href="${url}" target="_blank" class="btn btn-primary">Detail</a>
+                </div>
             </div>
         </div>
         `
