@@ -75,7 +75,7 @@
   gap: 1.3rem;
 }
 .home__image {
-  width: 50%;
+  width: 40%;
 }
 .home__form {
   display: flex;
@@ -117,6 +117,21 @@
   font-weight: 400;
   font-size: 1rem;
   line-height: auto;
+  color: #4a4c53;
+}
+.home__form--button {
+  border: 1px solid #fb8f1d;
+  color: #ffffff;
+  background-color: #fb8f1d;
+  border-radius: 8px;
+  padding: 0.3rem 1.6rem;
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: auto;
+}
+.home__form--button:hover {
+  opacity: 0.6;
 }
 
 body {

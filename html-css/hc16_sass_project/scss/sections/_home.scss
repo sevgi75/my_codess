@@ -5,7 +5,7 @@
     @include flex(center);
     gap: 1.3rem;   
     &__image {
-    width: 50%;
+    width: 40%;
     }
 
     &__form {
@@ -34,7 +34,11 @@
                 border-radius: 6px;
                 padding: 0.5rem;
                 @include setFont("Inter", 400, 1rem, auto);
+                color: $fontColor;
             }
+        }
+        &--button {
+            @include btn(1.6rem, 0.3rem, $mainColor, $btnBorderColor);
         }
     }
 }
