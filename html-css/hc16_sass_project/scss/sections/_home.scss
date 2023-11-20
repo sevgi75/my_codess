@@ -1,7 +1,28 @@
 // home
-
-.home {
-&__image {
+@use "../abstracts/mixin" as *;
+@use "../abstracts/variables" as *;
+.home { 
+    @include flex(center);   
+    &__image {
     width: 50%;
-}
+    }
+
+    &__form {
+        h2 {
+            @include setFont("Playfair Display", 700, 4rem, 80px);
+            color: $headerColor;
+        }
+        h3 {
+            @include setFont("Inter", 600, 1.4rem, 27px);
+      color: $headerColor;
+        }
+
+        hr {
+            width: 2rem;
+            border: 1px solid; 
+        }
+        form {
+            @include flex(space-between);
+        }
+    }
 }

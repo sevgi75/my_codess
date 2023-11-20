@@ -68,8 +68,36 @@
   opacity: 0.6;
 }
 
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .home__image {
   width: 50%;
+}
+.home__form h2 {
+  font-family: "Playfair Display";
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 80px;
+  color: #202336;
+}
+.home__form h3 {
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 27px;
+  color: #202336;
+}
+.home__form hr {
+  width: 2rem;
+  border: 1px solid;
+}
+.home__form form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 body {
