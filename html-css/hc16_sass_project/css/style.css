@@ -68,6 +68,10 @@
   opacity: 0.6;
 }
 
+.home__image {
+  width: 50%;
+}
+
 body {
   background-color: #ffffff;
 }
