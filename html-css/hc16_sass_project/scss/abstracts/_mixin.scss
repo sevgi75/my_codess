@@ -1,4 +1,6 @@
 // mixin
+@use "variables" as *;
+
 @mixin flex($jc, $ai:center) {
     display: flex;
     justify-content: $jc;
@@ -12,4 +14,16 @@
     line-height: $lh;
 }
 
-@mixin btn() {}
+@mixin btn($px, $py, $color, $bg) {
+    border: 1px solid $btnBorderColor;
+    color: $color;
+    background-color: $bg;
+    border-radius: 8px;
+    //padding-inline: $px; //? x ekseni padding
+    //padding-block: $py; //? y ekseni padding
+    padding: $py $px;
+    @include setFont("Inter", 500, 1rem, auto);
+    &:hover {
+        opacity: 0.6;
+    }
+}
