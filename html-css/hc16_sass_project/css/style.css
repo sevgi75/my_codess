@@ -68,6 +68,16 @@
   opacity: 0.6;
 }
 
+@media screen and (max-width: 500px) {
+  .header__links, .header__logo {
+    display: none;
+  }
+  .header i {
+    display: inline-block;
+    margin-left: auto;
+    padding-right: 1rem;
+  }
+}
 .home {
   display: flex;
   justify-content: center;
