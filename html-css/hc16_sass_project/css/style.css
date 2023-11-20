@@ -72,9 +72,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 1.3rem;
 }
 .home__image {
   width: 50%;
+}
+.home__form {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 0.7rem;
 }
 .home__form h2 {
   font-family: "Playfair Display";
@@ -98,6 +106,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.home__form form select {
+  width: 48%;
+  border-radius: 6px;
+  padding: 0.5rem;
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: auto;
 }
 
 body {
