@@ -1,5 +1,6 @@
 // navbar
 @use "../abstracts/mixin" as *;
+@use "../abstracts/variables" as *;
 .header {
     //display: flex;
     //justify-content: space-between;
@@ -14,6 +15,23 @@
         display: none;
     }
     &__links {
-        display: flex;
+        list-style-type: none;
+        @include flex(space-between);
+        gap: 0.5rem;
+        padding: 1rem 0;
+        &--home {
+            color: $headerColor;
+            border: none;
+            background-color: $mainColor;
+            font-family: Inter;
+            //font-style: normal;
+            font-weight: 500;
+            font-size: 1rem;
+            line-height: 19px;
+        }
+        &--disabled {
+            @extend .header__links--home;
+            color: #b8becd;
+        }
     }
 }

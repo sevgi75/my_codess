@@ -19,7 +19,24 @@
   display: none;
 }
 .header__links {
+  list-style-type: none;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 0;
+}
+.header__links--home, .header__links--disabled {
+  color: #202336;
+  border: none;
+  background-color: #ffffff;
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 19px;
+}
+.header__links--disabled {
+  color: #b8becd;
 }
 
 body {
