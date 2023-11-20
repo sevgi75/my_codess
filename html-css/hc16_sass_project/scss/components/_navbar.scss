@@ -35,5 +35,9 @@
             color: #b8becd;
             font-weight: 600;
         }
+        &--login {
+            @include btn();
+        }
+        &--register {}
     }
 }
