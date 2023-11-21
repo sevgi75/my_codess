@@ -19,4 +19,9 @@ console.log("Bol:", bol(6, 4));
 console.log("Carp:", carp(5, 4));
 console.log("Cikar:", cikar(5, 4));
 
+//? export default ile paylasilan bir degisken v.b suslu parantez kullanilmadan import edilir.
+//? export default'ta as kullanmadan herhangi bir isim kullanilabilir
+import ifade from "./hesapMakinasi.js"
+ifade()
+
 //! 1- importlar hoisted olur bu yuzden herhangi bir yerde eklenebilir ancak best practice en uste eklenmeleridir.
