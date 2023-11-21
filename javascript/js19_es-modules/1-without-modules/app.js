@@ -26,7 +26,7 @@ const products = [
 
   console.log("Toplam Fiyat:", calculatePrice(products));
 
-
+  console.log(users); //? global namespace
 
 
 //? Uygulamalar büyüdükçe kodlari tek bir JS dosyasına koymak bu kodun sürdürülebilirliğini ve anlaşılabiliriliğini imkansız hale getirmeye başlar.
