@@ -25,3 +25,10 @@ import ifade from "./hesapMakinasi.js"
 ifade()
 
 //! 1- importlar hoisted olur bu yuzden herhangi bir yerde eklenebilir ancak best practice en uste eklenmeleridir.
+
+//! 2- top-level this kullanimi window objesini gostermez.
+console.log(this); //? undefined
+
+//! 3- default olarak 'use strict' aciktir.Dolayisiyla daha kati bir sekilde derleme yapilir
+variable = 2
+console.log(variable);
