@@ -30,5 +30,5 @@ ifade()
 console.log(this); //? undefined
 
 //! 3- default olarak 'use strict' aciktir.Dolayisiyla daha kati bir sekilde derleme yapilir
-variable = 2
-console.log(variable);
+// variable = 2
+// console.log(variable);
