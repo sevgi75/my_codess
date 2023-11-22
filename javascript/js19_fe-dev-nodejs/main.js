@@ -4,28 +4,20 @@ const app = document.querySelector('#app')
 
 app.innerHTML = `<section id="users"></section>`
 
-const getUser = () => {
+const getUsers = () => {
   fetch("https://api.github.com/users")
-  .then((res) => {
-    // console.log(res)
-    if (!res.ok) {
-      //? Feetch api'da hatayi bizim yakalamiz gerekiyor.
-      throw new Error(`Hata: ${res.status}`) //? bir hata firlatiyoruz
+  .then((res) => {    
+    if (!res.ok) {      
+      throw new Error(`Hata: ${res.status}`) 
     }
     return res.json()
   })
   .then((data) => {
-    // veri = data
-    // console.log(veri)
+    
     show(data)
   })
   .catch((err) => showError(err))
-
-console.log(veri)
-
-
 }
-
 
 const show = (users) => {
   const userSection = document.getElementById("users")
@@ -45,3 +37,7 @@ const showError = (err) => {
   <img src="./img/404.png" alt="">
   `
 }
+
+window.addEventListener("load", () => {
+  getUsers()
+})
