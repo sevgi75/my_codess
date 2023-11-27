@@ -2,6 +2,7 @@ const btnDivs = document.getElementById("btns")
 const productDivs = document.getElementById("products")
 const searchInput = document.getElementById("searchInput")
 const categoryTitle = document.getElementById("category")
+const modalBody = document.querySelector(".modal-body")
 
 const btnColors = [
     "primary",
@@ -100,13 +101,37 @@ function displayProducts(arr) {
     console.log(product);
     if (baskets.some(item => item.title === product.title)) {
         baskets = baskets.map(item => {
-            return item.id === product.id ? {...item,quantity:item.quantity+1} : item
+            return item.id === product.id 
+            ? {...item,quantity:item.quantity+1} 
+            : item
         })
     }else {
         baskets.push(product)
     }
     console.log(baskets);
   }
+
+  function showModal(product){
+    fetch(`https://anthonyfs.pythonanywhere.com/api/products/${product.id}`)
+    .then((res) => res.json())
+    .then((res) => {
+      modalBody.innerHTML = `<div class="text-center">
+            <img src="${res.image}" class="p-2" height="250px" alt="...">
+            <h5 class="card-title">${res.title}</h5>
+            <p class="card-text">${res.description}</p>
+            <p class="card-text">Fiyat: ${res.price} $</p>
+            </div>
+            `;
+    });
+  // const {image,title,description,price} = product
+  // modalBody.innerHTML = `<div class="text-center">
+  // <img src="${image}" class="p-2" height="250px" alt="...">
+  // <h5 class="card-title">${title}</h5>
+  // <p class="card-text">${description}</p>
+  // <p class="card-text">Fiyat: ${price} $</p>
+  // </div>
+  // `;
+}
 
   btnDivs.addEventListener("click", (e) => {
     if (e.target.classList.contains("btn")) {
