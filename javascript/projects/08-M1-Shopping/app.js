@@ -107,3 +107,26 @@ function displayProducts(arr) {
     }
     console.log(baskets);
   }
+
+  btnDivs.addEventListener("click", (e) => {
+    if (e.target.classList.contains("btn")) {
+    const selectedCategory = e.target.innerText.toLowerCase()
+    categoryTitle.innerText = selectedCategory.toUpperCase()
+    const value = searchInput.value
+    // const filteredProducts = selectedCategory === "all" ? products : products.filter(item => item.category.toLowerCase() === selectedCategory && item.title.toLowerCase().includes(value.toLowerCase()))
+    const filteredProducts = filtered(selectedCategory, value)
+    displayProducts(filteredProducts)
+    }
+  })
+
+  searchInput.addEventListener("input", (e) => {
+    const value = e.target.value.toLowerCase()
+    const selectedCategory = categoryTitle.innerText.toLowerCase()
+    const filteredProducts = filtered(selectedCategory, value)
+    displayProducts(filteredProducts)
+  })
+
+  function filtered(selectedCategory, value) {
+    const newArr = selectedCategory === "all" ? products : products.filter((item) => item.category.toLowerCase() === selectedCategory && item.title.toLowerCase().includes(value.toLowerCase()))
+    return newArr
+  }
