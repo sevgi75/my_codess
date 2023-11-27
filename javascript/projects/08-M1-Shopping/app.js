@@ -21,14 +21,14 @@ let baskets = []
 const getProducts = async () => {
     const res = await fetch("https://anthonyfs.pythonanywhere.com/api/products/")
     const data = await res.json()
-    console.log(data);
+    // console.log(data);
     products = data
     category()
     displayProducts(products)
 }
 getProducts()
 const category = () => {
-    console.log(products);
+    // console.log(products);
     // const categoryArr = products.map(item => item.category)
     // console.log(categoryArr);
     //& 1.yol
@@ -49,7 +49,7 @@ const category = () => {
     // console.log(categoryArr);
     //& 3. yol
     const categoryArr = ["all", ...new Set(products.map(item => item.category))]
-    console.log(categoryArr);
+    // console.log(categoryArr);
 
     categoryArr.forEach((category, i) => {
         const btn = document.createElement("button")
@@ -98,7 +98,7 @@ function displayProducts(arr) {
     });
   }
   function addToCart(product) {
-    console.log(product);
+    // console.log(product);
     if (baskets.some(item => item.title === product.title)) {
         baskets = baskets.map(item => {
             return item.id === product.id 
@@ -108,7 +108,7 @@ function displayProducts(arr) {
     }else {
         baskets.push(product)
     }
-    console.log(baskets);
+    // console.log(baskets);
   }
 
   function showModal(product){
