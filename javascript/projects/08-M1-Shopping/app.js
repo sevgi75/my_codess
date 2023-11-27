@@ -3,6 +3,17 @@ const productDivs = document.getElementById("products")
 const searchInput = document.getElementById("searchInput")
 const categoryTitle = document.getElementById("category")
 
+const btnColors = [
+    "primary",
+    "secondary",
+    "success",
+    "info",
+    "warning",
+    "danger",
+    "light",
+    "dark",
+]
+
 let products = []
 
 const getProducts = async () => {
@@ -36,4 +47,11 @@ const category = () => {
     //& 3. yol
     const categoryArr = ["all", ...new Set(products.map(item => item.category))]
     console.log(categoryArr);
+
+    categoryArr.forEach((category, i) => {
+        const btn = document.createElement("button")
+        btn.innerText = category.toUpperCase()
+        btn.classList.add("btn", `btn-${btnColors[i]}`)
+        btnDivs.appendChild(btn)
+    })
 }
