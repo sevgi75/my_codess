@@ -73,6 +73,6 @@ This assignment will help students practice their JavaScript skills by building 
 - Step 4: Deploy your application on Github template to showcase your app within your team.
 
 
-<p align='center'> <strong>⌛ Happy Coding  ✍</strong> </p>
+
 
 
