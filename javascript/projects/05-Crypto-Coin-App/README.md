@@ -1,6 +1,3 @@
-<p>Clarusway<img align="right"
-  src="https://secure.meetupstatic.com/photos/event/3/1/b/9/600_488352729.jpeg"  width="15px"></p>
-
 # Project-005 : Crypto-Coin-App (JS-05)
 
 ## Description
@@ -50,8 +47,5 @@ User stories;
 🔥 You can use [Coinranking Api](https://developers.coinranking.com/api/documentation) for your app.
 
 🔥 You can use [SweetAlert2](https://sweetalert2.github.io/#download) for notification. 
-
-🔥 You don’t need to create a new template for this project, you can use [Crypto-Coin-App](https://github.com/clarusway/clarusway-fs-tr-15-frontend/tree/main/javascript/projects/05-Crypto-Coin-App/coin-app-starter) template for html and css. We will be concerned in javascript side.
-
 
 <p align='center'> <strong>⌛ Happy Coding  ✍</strong> </p>
