@@ -13,7 +13,7 @@
     padding: 50px;
 }
 #par3{
-    border: 2px double magenta;
+    border: 5px double magenta;
 }
 #par4{
     border: 10px solid red;
@@ -24,4 +24,7 @@
 #par5{
     border: 6px outset red;
     border-radius: 20px;
+}
+#par6{
+    border: 6px double purple;
 }
