@@ -22,7 +22,8 @@ h1{
     margin: 20px auto;
     border: 2px solid red;
     padding: 20px; /*padding i artirinca kutumun büyümesini istemiyorsam box-sizing: border-box demeliyim*/
-    /*box-sizing: border-box;*/
+    /*box-sizing: border-box;*/ /* Kutunun borderları sabit kalsın */
+    overflow: auto; /* Kutunun içeriğini kutu icine sıgdır dısarı tasmasın */
 }
 
 #par2{
@@ -37,6 +38,7 @@ h1{
     margin: auto;
     text-align: center;
     color: white;
+    text-decoration: none;
     
 }
 
