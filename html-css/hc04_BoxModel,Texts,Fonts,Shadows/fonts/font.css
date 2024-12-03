@@ -25,10 +25,11 @@ font-family: 'Shadows Into Light', cursive;
 }
 
 .font5{
-    /*font-family: "harvey";*/
+    /* font-family: "harvey"; */
+    /* bu sekilde indirdigim bir fontu kullanmis oldum */
 }
 
-/*@font-face {
+/* @font-face {
     font-family: "harvey";
-    src: url(./font/Jolly_Lodger.zip);
-}*/   /*lokalden font family kullanmak istersem*/
+    src: url(./font/SedgwickAveDisplay-Regular.ttf);
+} */  /*lokalden font family kullanmak istersem
