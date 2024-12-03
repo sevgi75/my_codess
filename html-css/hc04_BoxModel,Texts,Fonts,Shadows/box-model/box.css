@@ -6,8 +6,9 @@
 .container{
     background-color: orange;
     margin: 30px;
+    /* padding: 1px; */
     border: 1px solid black;
-
+    /* box1 i containerden ayirmak icin border ya da padding verdik */
     
 }
 
