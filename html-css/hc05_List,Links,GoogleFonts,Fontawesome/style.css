@@ -165,6 +165,7 @@ h2 i{
     color: darkorange;
   }*/ /*sadece i değişsin istemiyorsam nav.cw a:hover i{} yaparım*/
 
+  /* inline elementlere margin padding genislik ve yukseklik veremiyoruz */
   span{
     background-color: gray;
     margin: 10px;
@@ -182,9 +183,12 @@ h2 i{
 
   /*--------PSEUDO ELEMENTS--------*/
 
+  /* ilk satiri secmek icin */
   .p-elements::first-line{
     color: red;
   }
+
+  /* ilk harfi secmek icin */
   .p-elements::first-letter{
     font-size: 40px;
   }
@@ -242,6 +246,11 @@ h2 i{
   }
   ul.before-after li:nth-child(4):active::after{
     content: '✅';
+  }
+
+  ul.before-after li:last-child:hover::before{
+    content: '🌞' ;
+    margin: 10px;
   }
 
 
