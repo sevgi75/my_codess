@@ -28,8 +28,8 @@ ul.languages li{
     width: 250px;
     border-radius: 10px;
     padding-left: 20px;    
-    border: 2px solid goldenrod;
-    border-left: 3px solid gray;
+    border: 3px solid goldenrod;
+    border-left: 5px solid gray;
 }
 
 ul.languages li:hover{
@@ -84,10 +84,12 @@ h2 i{
     font-family: 'Shadows Into Light', cursive;
   }
   ul.pseudo li:nth-child(odd){
+    /* odd tek elemanlari secer */
     color: blue;
     background-color:green;
   }
   ul.pseudo li:nth-child(even){
+    /* cift elemanlara uygular */
     /*color: orange;*/
     background-color: pink;
   }  
